@@ -6,7 +6,7 @@
 # Importing libraries
 import numpy as np
 import pandas as pd
-from sklearn import linear_model as lm
+from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
 
 # Reading and splitting the data into training and testing data
@@ -19,7 +19,7 @@ test = np.array([input().split() for i in range(T)], float)
 XtoP = PolynomialFeatures(degree=3)
 
 # Setting the model LinearRegression
-model = lm.LinearRegression()
+model = LinearRegression()
 
 # Creating model
 model.fit(XtoP.fit_transform(train[:, :-1]), train[:, -1])
